@@ -1,0 +1,41 @@
+<mat-toolbar color="primary">
+  <span class="meni-span">
+        <a routerLink="/"><mat-icon fontIcon="home"></mat-icon></a>
+  </span>
+
+  <span class="meni-span" *ngIf="userRole == 1">
+    <a routerLink="/librarian/add/book">Add Book</a>
+  </span>
+
+  <span class="meni-span" *ngIf="userRole == 1">
+    <a routerLink="/librarian/approve/reservation">Approve Reservation</a>
+  </span>
+
+  <span class="meni-span" *ngIf="userRole == 1">
+    <a routerLink="/librarian/return/book">Return Book</a>
+  </span>
+
+  <span class="meni-span" *ngIf="userRole == 2">
+    <a routerLink="/patron/make/reservation">Make Reservation</a>
+  </span>
+
+  <span class="meni-span" *ngIf="userRole == 2">
+    <a routerLink="/patron/my/reservations">My Reservations</a>
+  </span>
+
+  <span class="meni-span">
+        <a routerLink="/about">About</a>
+  </span>
+
+
+  <span class="spacer"></span>
+  <ul>
+        <li class="meni-span" *ngIf="userRole == 0">
+              <!-- <button mat-raised-button style="background-color: green; color: white;"  routerLink="auth/login">Login</button> -->
+              <button mat-raised-button class="login-button" routerLink="/login">Login</button>
+        </li>
+        <li *ngIf="userRole != 0">
+              <button mat-raised-button color="warn" (click)="logout()">Logout</button>
+        </li>
+  </ul>
+</mat-toolbar>

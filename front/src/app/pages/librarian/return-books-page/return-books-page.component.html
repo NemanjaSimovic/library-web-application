@@ -1,0 +1,41 @@
+<div class="msgStyle light-blue-background">
+  <h1>Return Book</h1>
+</div>
+<!-- book list part -->
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" class="light-blue-background">
+
+    <!-- Title Column -->
+    <ng-container matColumnDef="username">
+      <th mat-header-cell *matHeaderCellDef> Username: </th>
+      <td mat-cell *matCellDef="let element"> {{element.username}} </td>
+    </ng-container>
+
+    <!-- Author Column -->
+    <ng-container matColumnDef="bookTitle">
+      <th mat-header-cell *matHeaderCellDef> Book Title: </th>
+      <td mat-cell *matCellDef="let element"> {{element.bookTitle}} </td>
+    </ng-container>
+
+    <!-- Reserve Book Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> Return Book: </th>
+      <td mat-cell *matCellDef="let element">
+        <button (click)="returnBook(element)" mat-raised-button color="primary">Return Book</button>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="dueDate">
+      <th mat-header-cell *matHeaderCellDef> Due Date: </th>
+      <td mat-cell *matCellDef="let element; let i = index" [ngClass]="{'light-red-background': soonDueDate(element.dueDate), 'red-background': passedDueDate(element.dueDate)}">
+        <p *ngIf="element.dueDate">{{dateStrings[i]}}</p>
+        <p *ngIf="!element.dueDate">Pending</p>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+<div  class="msgStyle light-green-background" *ngIf="message != ''">
+  <h1>{{message}}</h1>
+</div>

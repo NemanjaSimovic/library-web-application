@@ -1,0 +1,29 @@
+
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" class="boja">
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="title">
+      <th mat-header-cell *matHeaderCellDef> title: </th>
+      <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="author">
+      <th mat-header-cell *matHeaderCellDef> author: </th>
+      <td mat-cell *matCellDef="let element"> {{element.author}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="genre">
+      <th mat-header-cell *matHeaderCellDef> genre: </th>
+      <td mat-cell *matCellDef="let element"> {{element.genre}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+<mat-paginator [pageSizeOptions]="[5, 10, 15, 20]"
+  aria-label="Select page of periodic elements">
+</mat-paginator>

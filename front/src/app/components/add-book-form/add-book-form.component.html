@@ -1,0 +1,23 @@
+<div class="light-blue-background">
+  <mat-card class="light-blue-background">
+    <form>
+      <mat-form-field class="full-width">
+        <input type="text" matInput [(ngModel)]="title" name="title" placeholder="Title">
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input type="text" matInput [(ngModel)]="author" name="author" placeholder="Author">
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input type="text" matInput [(ngModel)]="genre" name="genre" placeholder="Genre">
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input type="number" min="1" matInput [(ngModel)]="count" name="count" placeholder="Count">
+      </mat-form-field>
+      <div class="centered-content">
+        <br>
+        <button class="button-margins" mat-raised-button color="primary" (click)="addBook()">Add Book</button>
+      </div>
+      <h3 style="color: red; text-align: center; margin-top: 1rem;">{{errorMessge}}</h3>
+    </form>
+  </mat-card>
+</div>

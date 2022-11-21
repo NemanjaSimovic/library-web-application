@@ -1,0 +1,65 @@
+<div class="msgStyle light-blue-background">
+  <h1>Add Book</h1>
+</div>
+
+<!-- book list part -->
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" class="light-blue-background">
+
+    <!-- Title Column -->
+    <ng-container matColumnDef="title">
+      <th mat-header-cell *matHeaderCellDef> Title: </th>
+      <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+    </ng-container>
+
+    <!-- Author Column -->
+    <ng-container matColumnDef="author">
+      <th mat-header-cell *matHeaderCellDef> Author: </th>
+      <td mat-cell *matCellDef="let element"> {{element.author}} </td>
+    </ng-container>
+
+    <!-- Genre Column -->
+    <ng-container matColumnDef="genre">
+      <th mat-header-cell *matHeaderCellDef> Genre: </th>
+      <td mat-cell *matCellDef="let element"> {{element.genre}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="count">
+      <th mat-header-cell *matHeaderCellDef> Total stock: </th>
+      <td mat-cell *matCellDef="let element"> {{element.count}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+<mat-paginator [pageSizeOptions]="[5, 10, 15, 20]"
+  aria-label="Select page of periodic elements">
+</mat-paginator>
+
+<br>
+
+<!-- add book form part -->
+<div class="light-blue-background">
+  <mat-card class="light-blue-background">
+    <form>
+      <mat-form-field class="full-width">
+        <input type="text" matInput [(ngModel)]="title" name="title" placeholder="Title">
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input type="text" matInput [(ngModel)]="author" name="author" placeholder="Author">
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input type="text" matInput [(ngModel)]="genre" name="genre" placeholder="Genre">
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input type="number" matInput [(ngModel)]="count" name="count" placeholder="Count" min="1">
+      </mat-form-field>
+      <div class="centered-content">
+        <br>
+        <button class="button-margins" mat-raised-button color="primary" (click)="addBook()">Add Book</button>
+      </div>
+      <h3 style="color: red; text-align: center; margin-top: 1rem;">{{errorMessge}}</h3>
+    </form>
+  </mat-card>
+</div>

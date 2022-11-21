@@ -1,0 +1,13 @@
+.mat-card-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+
+span {
+position: absolute;
+top: 15%;
+left: 15%;
+color: white;
+font-size: 5rem;
+}

@@ -1,0 +1,17 @@
+<div class="light-blue-background">
+  <mat-card class="light-blue-background">
+    <form>
+      <mat-form-field class="full-width">
+        <input type="text" matInput [(ngModel)]="username" name="username" placeholder="Username">
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input type="password" matInput [(ngModel)]="password" name="password" placeholder="Password">
+      </mat-form-field>
+      <div class="centered-content">
+        <br>
+        <button class="button-margins" mat-raised-button color="primary" (click)="login()">Login</button>
+      </div>
+      <h3 style="color: red; text-align: center; margin-top: 1rem;">{{errorMessge}}</h3>
+    </form>
+  </mat-card>
+</div>

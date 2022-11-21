@@ -1,0 +1,69 @@
+.full-width{
+  padding-left: 3%;
+  padding-right: 2%;
+  width: 94%;
+}
+
+.hours-field{
+  margin-top: 1rem;
+  padding-left: 3%;
+  width: 40px;
+}
+
+.minutes-field{
+  margin-top: 1rem;
+  padding-left: 3%;
+  width: 40px;
+}
+
+.button-margins {
+  margin-top: 0.5rem;
+  margin-left: 0.5rem;
+}
+
+.centered-content {
+  display: flex;
+  justify-content: center;
+}
+
+.light-blue-background{
+  background-color: rgb(173, 208, 240);
+}
+
+.darker-light-blue-background{
+  background-color: rgb(124, 178, 228);
+}
+
+.light-green-background{
+  background-color: rgb(195, 235, 179);
+  /* background-color: rgb(177, 211, 164); */
+}
+
+table{
+  margin-left: 10%;
+  width: 80%;
+  /* border: black 1px solid; */
+}
+
+mat-paginator{
+  margin-left: 10%;
+  width: 80%;
+}
+
+table, td{
+  padding: 0.5rem;
+  border-collapse:collapse;
+  /* text-align: center; */
+}
+
+tr{
+  height: 1rem;
+}
+
+.msgStyle{
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+}
